@@ -1,0 +1,87 @@
+/* Styling for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Ensure space between logo/title and nav items */
+    background-color: #ffffff; /* Background color */
+    padding: 10px 20px; /* Padding for the navbar */
+    position: fixed; /* Fixed position */
+    width: 100%; /* Full width */
+    top: 0; /* Top of the page */
+    z-index: 10; /* Layering */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+}
+
+/* Styling for the logo and title */
+.navbar-brand {
+    display: flex;
+    align-items:end ; /* Center vertically */
+    margin-right: auto; /* Pushes nav items to the right */
+}
+
+/* Use a web image for the logo */
+.logo {
+    width: 60px; /* Increase logo size */
+    height: 60px; /* Set height explicitly to keep it square */
+    margin-right: 15px; /* Increase spacing between logo and title */
+    background-image: url('https://static.vecteezy.com/system/resources/previews/013/699/433/non_2x/letter-rr-real-estate-property-and-construction-minimal-logo-design-template-vector.jpg'); /* Replace with your logo URL */
+    background-size: contain; /* Ensure the logo fits within the container */
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+/* App title styling */
+.app-title {
+    font-size: 24px; /* Title font size */
+    font-weight: bold; /* Title font weight */
+    color: #2c3e50; /* Title color */
+}
+
+/* Existing styling for the nav items */
+.nav-item {
+    list-style: none; /* Remove default list styling */
+    display: inline-block; /* Display inline */
+    margin-left: 20px; /* Spacing between items */
+}
+
+/* Styling for the nav links */
+.nav-link {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Default link color */
+    font-size: 16px; /* Font size */
+    padding: 10px; /* Padding around links */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Remove box around "Home" */
+.navbar-brand {
+    border: none; /* Remove border */
+    background-color: transparent; /* Ensure no background */
+}
+
+/* Hover effect for the links */
+.nav-link:hover {
+    color: white; /* Text color on hover */
+    background-color: blue; /* Background color on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Ensure toggler is hidden on larger screens */
+.navbar-toggler {
+    display: none;
+}
+
+/* Responsive layout */
+@media (max-width: 991.98px) {
+    .navbar {
+        justify-content: center; /* Center items on smaller screens */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show the toggle button on smaller screens */
+    }
+
+    .collapse.navbar-collapse {
+        justify-content: center;
+    }
+}

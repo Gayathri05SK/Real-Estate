@@ -1,0 +1,53 @@
+/* about.component.css */
+.about-container {
+    background-image: url('https://example.com/background-image.jpg'); /* Update with your actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333; /* Text color */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Max width for content */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 100px;
+    
+}
+
+
+header {
+    text-align:right;
+    text-decoration: double;
+    margin-bottom: 20px;
+    padding-top: 100px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50; /* Darker header color */
+    padding-top: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #2980b9; /* Highlighted section color */
+}
+
+p, li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for list items */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}

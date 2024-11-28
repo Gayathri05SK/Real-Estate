@@ -1,0 +1,53 @@
+<div class="search-container">
+    <h1>Search Properties</h1>
+  
+    <!-- Search Form -->
+    <form (submit)="filterListings()">
+      <label for="location">City:</label>
+      <input type="text" id="location" [(ngModel)]="searchLocation" name="location" placeholder="Enter city">
+  
+      <label for="purpose">Purpose:</label>
+      <select id="purpose" [(ngModel)]="searchPurpose" name="purpose">
+        <option value="">Any</option>
+        <option value="for-sale">For Sale</option>
+        <option value="for-rent">For Rent</option>
+      </select>
+  
+      <label for="property-type">Property Type:</label>
+      <select id="property-type" [(ngModel)]="searchPropertyType" name="propertyType">
+        <option value="">Any</option>
+        <option value="house">House</option>
+        <option value="apartment">Apartment</option>
+        <option value="commercial">Commercial</option>
+        <option value="land">Land</option>
+      </select>
+  
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  
+  <!-- Display filtered results -->
+  <div class="listings-container">
+    <div *ngFor="let listing of filteredListings" class="listing-card">
+      <img [src]="listing.media[0]?.url" alt="Property Image" (click)="showDetails(listing)" class="listing-image"/>
+      <div class="listing-info">
+        <h3>{{ listing.title }}</h3>
+        <p>Size: {{ listing.size }} sq ft</p>
+        <p>Price: ₹{{ listing.price }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Show full details on image click -->
+  <div *ngIf="selectedListing" class="listing-details">
+    <h2>{{ selectedListing.title }}</h2>
+    <img [src]="selectedListing.media[0]?.url" alt="Property Image" class="details-image"/>
+    <p>{{ selectedListing.description }}</p>
+    <p>Size: {{ selectedListing.size }} sq ft</p>
+    <p>Price: ₹{{ selectedListing.price }}</p>
+    <p>Purpose: {{ selectedListing.purpose }}</p>
+    <p>Property Type: {{ selectedListing.propertyType }}</p>
+    <p>Address: {{ selectedListing.streetAddress }}, {{ selectedListing.city }}, {{ selectedListing.state }}, {{ selectedListing.postalCode }}</p>
+    <p>Contact: {{ selectedListing.contact.contactName }} ({{ selectedListing.contact.phone }})</p>
+  </div>
+  

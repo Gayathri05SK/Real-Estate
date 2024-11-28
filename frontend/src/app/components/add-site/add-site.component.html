@@ -1,0 +1,86 @@
+<div class="container">
+    <header>
+        <h1>Real Estate Listing Form</h1>
+    </header>
+
+    <form #listingForm="ngForm" (ngSubmit)="onSubmit(listingForm)">
+        <h2>1. Property Details</h2>
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" [(ngModel)]="property.title" required maxlength="100"
+            placeholder="Beautiful 2 BHK Apartment in City Center">
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="property.description" required minlength="20"
+            maxlength="500" placeholder="This modern apartment is located in the heart of the city..."></textarea>
+
+        <label for="size">Size (sq. ft.):</label>
+        <input type="number" id="size" name="size" [(ngModel)]="property.size" required min="1"
+            placeholder="1200 sq. ft.">
+
+        <label for="price">Price (in INR):</label>
+        <input type="number" id="price" name="price" [(ngModel)]="property.price" required min="1"
+            placeholder="₹35,00,000">
+
+        <h2>2. Address</h2>
+
+        <label for="street-address">Street Address:</label>
+        <input type="text" id="street-address" name="streetAddress" [(ngModel)]="property.streetAddress" required
+            maxlength="150" placeholder="123 Main Street, Apt 4B">
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" [(ngModel)]="property.city" required maxlength="50"
+            placeholder="Mumbai">
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" [(ngModel)]="property.state" required maxlength="50"
+            placeholder="Maharashtra">
+
+        <label for="postal-code">Postal Code:</label>
+        <input type="text" id="postal-code" name="postalCode" [(ngModel)]="property.postalCode" required
+            pattern="\d{6}" placeholder="400001">
+
+        <label for="map-link">Google Map Location Link:</label>
+        <input type="url" id="map-link" name="mapLink" [(ngModel)]="property.mapLink"
+            placeholder="https://goo.gl/maps/xyz123">
+
+        <h2>3. Media</h2>
+
+        <label for="images">Upload Images:</label>
+        <input type="file" id="images" name="images" (change)="onFileChange($event)" accept="image/*" multiple required>
+
+        <h2>4. Property Type</h2>
+
+        <label for="property-type">Property Type:</label>
+        <select id="property-type" name="propertyType" [(ngModel)]="property.propertyType" required>
+            <option value="" disabled>Select</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="commercial">Commercial</option>
+            <option value="land">Land</option>
+        </select>
+
+        <label for="purpose">Purpose:</label>
+        <select id="purpose" name="purpose" [(ngModel)]="property.purpose" required>
+            <option value="" disabled>Select</option>
+            <option value="for-sale">For Sale</option>
+            <option value="for-rent">For Rent</option>
+        </select>
+
+        <h2>5. Contact Information</h2>
+
+        <label for="contact-name">Contact Name:</label>
+        <input type="text" id="contact-name" name="contactName" [(ngModel)]="contact.contactName" required
+            maxlength="100" placeholder="Rahul Sharma">
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="contact.phone" required pattern="^[789]\d{9}$"
+            placeholder="9876543210">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="contact.email" required
+            placeholder="rahul.sharma@example.com">
+
+        <button type="submit">Submit</button>
+    </form>
+</div>

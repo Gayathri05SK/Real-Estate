@@ -1,0 +1,114 @@
+/* Listings Container */
+.listings-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap between listings */
+    justify-content: center;
+    margin-top: 100px; /* Move listings down */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+/* Listing Card */
+.listing-card {
+    border: 1px solid #e0e0e0; /* Slightly lighter border */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Increased padding for better spacing */
+    width: 300px;
+    text-align: center;
+    background-color: #fff; /* White background for contrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Hover effect for listing card */
+.listing-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Listing Image */
+.listing-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px; /* Rounded corners for images */
+    cursor: pointer;
+    transition: opacity 0.3s; /* Smooth opacity transition */
+}
+
+.listing-image:hover {
+    opacity: 0.85; /* Slightly fade on hover */
+}
+
+/* Listing Info */
+.listing-info {
+    margin-top: 15px; /* Increased space above */
+}
+
+.listing-info h3 {
+    font-size: 22px; /* Larger heading size */
+    color: #007bff; /* Blue color for titles */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.listing-info p {
+    font-size: 15px; /* Slightly larger font size for description */
+    color: #555; /* Darker gray color for text */
+    margin: 5px 0; /* Add vertical space between lines */
+}
+
+/* Listing Meta Information */
+.listing-meta {
+    display: flex; /* Use flex for horizontal layout */
+    justify-content: space-between; /* Space between items */
+    margin-top: 10px; /* Space above meta info */
+}
+
+.listing-meta p {
+    flex: 1; /* Make each item take equal space */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center text within each item */
+    font-size: 14px; /* Font size for meta info */
+}
+
+/* Listing Details */
+.listing-details {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 2px solid #ddd;
+    background-color: #f9f9f9; /* Light gray background for details */
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Details Image */
+.details-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px; /* Rounded corners for details images */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* General Styles */
+body {
+    background-color: #f2f4f8; /* Slightly darker light background for contrast */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    padding-top: 40px; /* Move everything down */
+}
+
+h2, h3 {
+    color: #333; /* Dark text color for headings */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .listings-container {
+        flex-direction: column; /* Stack listings on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .listing-card {
+        width: 90%; /* Full width on smaller screens */
+    }
+}
